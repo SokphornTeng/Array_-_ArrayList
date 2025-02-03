@@ -1,0 +1,67 @@
+public class Java_Array {
+
+    // 1/. array = used for store multiple values in a single variable
+
+    public static void main(String[] args) {
+
+   String[] testing_1 = {"A", "B", "C"};
+   testing_1[0] = "G";
+   System.out.println(testing_1[0]);
+
+
+        // 2/. fixed size
+
+        String[] testing_2 = new String[3];
+        testing_2[0] = "Aa";
+        testing_2[1] = "Bb";
+        testing_2[2] = "Cc";
+        for(int i = 0; i < testing_2.length; i++){
+            System.out.println(testing_2[i]);
+        }
+        for(String testing_3 : testing_2){
+            System.out.println(testing_3);
+        }
+
+       //////////////////////////////
+
+        String testing_3[] = {"A", "B", "C"};
+        System.out.println(testing_3[1]);
+        int testing_3[] = {2, 4, 6, 7, 8};
+        System.out.println(testing_3[1]);
+
+
+        // 3/. Array is fixed size but arraylist is dynamic
+
+        String[] test_1 = new String[3];
+        String[] test_2 = {"Aa", "Bb", "Cc"};
+        ArrayList<String> test_01 = new ArrayList<>();
+        ArrayList<String> test_02 = new ArrayList<>(Arrays.asList("Aa", "Bb", "Cc"));
+
+
+// ==> Array & ArrayList
+
+// 4/. array is use a memory address
+        String[] test_2 = {"Aa", "Bb", "Cc"};
+        System.out.println(test_2[2]);
+        System.out.println(test_2.length);
+        test_2[0] = "Hh";
+        System.out.println(test_2[0]);
+        System.out.println(test_2);
+
+ // 5/. arrayList is use string method for printe the result and it easy for remove, resize and printing
+ // 6/. arrayList is a part of java collection that can use the provide method in it
+        ArrayList<String> test_002 = new ArrayList<>(Arrays.asList("Aa", "Bb", "Cc"));
+        System.out.println(test_002.get(2));
+        System.out.println(test_002.size());
+        test_002.add("Gg");
+        System.out.println(test_002.get(3));
+        test_002.set(0, "Kk");
+        System.out.println(test_002.get(0));
+        test_002.remove("Bb");
+        System.out.println(test_002.get(1));
+        System.out.println(test_002);
+
+    }
+
+
+}
