@@ -1,0 +1,105 @@
+Looping in Java
+
+* The for loop is primarily used when you know in advance how many times you want to iterate.
+  
+ for (int i = 0; i < 5; i++) {
+    System.out.println("Value of i: " + i);
+    }
+
+* The foreach loop is a simplified version of the for loop, used to iterate over arrays or collections
+ 
+  int[] numbers = {1, 2, 3, 4, 5};
+   for (int num : numbers) {
+    System.out.println("Number: " + num);
+    }
+
+   (Best for iterating over arrays or collections like ArrayList, Set, Map, etc.
+    Example: Iterating over elements in a list without worrying about indices.)
+
+* The while loop is used when the number of iterations is not known, and the loop continues as long as a condition     evaluates to true.
+ 
+  int i = 0;
+    while (i < 5) {
+    System.out.println("Value of i: " + i);
+    i++;
+    }
+
+( Best for when you need to iterate until a specific condition is met but don’t know how many iterations are needed.
+Example: Waiting for user input or iterating until a certain condition becomes false. )
+
+* The do-while loop is similar to the while loop but ensures the code block runs at least once, regardless of the condition.
+
+int i = 0;
+do {
+    System.out.println("Value of i: " + i);
+    i++;
+} while (i < 5);
+
+(Best for when you need the loop to run at least once.
+Example: Validating user input before checking a condition.)
+
+////////////////////////////////
+
+Choosing the Right Loop
+
+Use for loop:
+When you know the exact number of iterations.
+Example: Iterating over indices of an array.
+
+Use foreach loop:
+When iterating over collections or arrays without modifying them.
+Example: Printing all elements in a list.
+
+Use while loop:
+When the number of iterations is unknown, and you depend on a condition.
+Example: Reading data from a file until the end.
+
+Use do-while loop:
+When you want the loop to run at least once, even if the condition is initially false.
+Example: Prompting a user for input until valid data is provided.
+
+
+/////////////////////////////////
+
+* Primitive
+int x = 10;
+
+* Wrapper Class
+Integer x = Integer.valueOf(10); // Boxing: primitive to object
+int y = x.intValue();           // Unboxing: object to primitive
+
+* Autoboxing (Primitive → Wrapper)
+Integer x = 10; // Automatically converts 'int' to 'Integer'
+
+* Unboxing (Wrapper → Primitive)
+int y = x; // Automatically converts 'Integer' to 'int'
+
+
+* Collections (e.g., ArrayList) Collections like ArrayList cannot store primitives, so wrapper classes are use
+
+ArrayList<Integer> list = new ArrayList<>();
+list.add(10); // Autoboxing
+list.add(20);
+
+int value = list.get(0); // Unboxing
+System.out.println(value); // Output: 10
+
+* Utility Methods Wrapper classes provide methods to parse strings into primitive types or convert primitives to strings
+
+String str = "123";
+int num = Integer.parseInt(str); // Convert String to int
+System.out.println(num + 10); // Output: 133
+
+int x = 42;
+String strValue = Integer.toString(x); // Convert int to String
+System.out.println(strValue); // Output: "42"
+
+
+* Nullability Wrapper classes can store null, while primitives cannot.
+Integer x = null; // Valid
+int y = null; // Compilation error
+
+* Streams and Optional APIs Many functional programming features in Java 8+ use wrapper classes for primitives.
+Optional<Integer> optional = Optional.of(10);
+optional.ifPresent(System.out::println); // Output: 10
+
